@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    env_file:
+      - .env
+    environment:
+      - TA_MASTER_SECRET=${TA_MASTER_SECRET:-default_dev_secret_replace_in_env}
+      - DATABASE_URL=${DATABASE_URL:-sqlite:///./vanet_prototype.db}
+    volumes:
+      - ./vanet_prototype.db:/app/vanet_prototype.db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "${FRONTEND_PORT:-5173}:5173"
+    depends_on:
+      - backend

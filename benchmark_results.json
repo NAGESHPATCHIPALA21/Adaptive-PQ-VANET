@@ -1,0 +1,35 @@
+{
+  "simulation_steps": 30,
+  "vehicle_count": 13,
+  "total_evaluations": 390,
+  "traditional_scheme": {
+    "total_gsk_updates": 221,
+    "unnecessary_updates": 220,
+    "broadcast_messages": 5915,
+    "estimated_rekey_latency_ms": 3052.01
+  },
+  "proposed_mt_agkm": {
+    "keep_decisions": 169,
+    "prepare_decisions": 219,
+    "update_decisions": 2,
+    "unnecessary_updates_avoided": 220,
+    "broadcast_messages": 659,
+    "estimated_rekey_latency_ms": 27.62,
+    "handover_prep_latency_ms": 186.15
+  },
+  "comparative_metrics": {
+    "gsk_update_reduction_percent": 99.1,
+    "communication_overhead_reduction_percent": 88.9,
+    "security_status": "MAINTAINED_IDENTICAL_OR_SUPERIOR",
+    "forward_backward_security": "VERIFIED_ACTIVE"
+  },
+  "experiment_config": {
+    "seed": 42,
+    "duration_steps": 30,
+    "vehicle_count": 13,
+    "rsu_count": 4,
+    "measured_kem_latency_ms": 12.61,
+    "measured_duration_seconds": 2.723
+  },
+  "benchmarked_at": 1790676946.4408786
+}
